@@ -1,12 +1,11 @@
-document
-    .getElementById("contactForm")
-    .addEventListener("submit", function (event) {
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
         event.preventDefault();
 
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const phone = document.getElementById("phone").value;
-        const message = document.getElementById("message").value;
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const message = document.getElementById('message').value;
 
         function escapeInput(input) {
             return input.replace(/['"<>;]/g, "");
@@ -39,16 +38,18 @@ document
         alert("Formulario enviado correctamente y validado!");
     });
 
-function isString(input) {
-    return typeof input === "string" && input.trim() !== "";
-}
+    function isString(input) {
+        return typeof input === 'string' && input.trim() !== '';
+    }
 
-function validateEmail(email) {
-    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return re.test(String(email).toLowerCase());
-}
+    function validateEmail(email) {
+        const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return re.test(String(email).toLowerCase());
+    }
 
-function isPhoneNumber(phone) {
-    const re = /^[0-9]{10}$/;
-    return re.test(phone);
-}
+    function isPhoneNumber(phone) {
+        const re = /^[0-9]{10}$/;
+        return re.test(phone);
+    }
+});
+
